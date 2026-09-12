@@ -1,0 +1,25 @@
+name: CI Sistema Hospitalario
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos
+        run: |
+          echo "Verificando proyecto..."
+          test -f README.md
+          test -f index.html
+          echo "Los archivos principales existen correctamente."
+
+      - name: Prueba exitosa
+        run: echo "CI ejecutado correctamente"
