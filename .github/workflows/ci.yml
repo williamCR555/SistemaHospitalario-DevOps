@@ -5,6 +5,10 @@ on:
     branches:
       - main
       - develop
+      - feature/login
+  pull_request:
+    branches:
+      - develop
 
 jobs:
   test:
